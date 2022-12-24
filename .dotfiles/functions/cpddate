@@ -1,0 +1,23 @@
+#!/bin/sh
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2021 nfitzen <https://github.com/nfitzen>
+
+# A Bash function that transforms a date string into Discord's Unix time format, and copies it.
+# Requires xclip. Place in ~/.bash_aliases or any other Bash source.
+
+function cpddate () {
+    if [ $# -eq 0 ]; then
+        >&2 echo "Not enough arguments provided."
+        return 1
+    fi
+    if [[ -n $2 && $2 != [tTdDfFR] ]]; then
+        >&2 echo "Must use a valid Discord timestamp style."
+        return 2
+    fi
+    string="$(date -d "$1" +'<t:%s')"
+    if [ $# -ge 2 ]; then
+        string="${string}:$2"
+    fi
+    string="${string}>"
+    echo -n "$string" | xclip -selection clipboard
+}
