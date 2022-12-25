@@ -1,3 +1,5 @@
-#!/bin/zsh
+#!/usr/bin/zsh
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2022 nfitzen <https://github.com/nfitzen>
 
 rm $HISTFILE && history -p
