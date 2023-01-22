@@ -7,4 +7,4 @@ alias \
     pt6="ping -c4 2606:4700:4700::1111" \
     pt=pt6
 
-alias pcc="gcc -g -Wall -Wconversion *.c"
+alias pcc="gcc -g -Wall -Wconversion"
