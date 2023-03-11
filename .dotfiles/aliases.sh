@@ -7,6 +7,6 @@ alias \
     pt6="ping -c4 2606:4700:4700::1111" \
     pt=pt6
 
-alias pcc="gcc -g -Og -Wall -Wpedantic -Wconversion"
-alias occ="gcc -O2 -Wall -Wpedantic -Wconversion"
+alias pcc="gcc -g -Og -Wall -Wconversion"
+alias occ="gcc -O2 -Wall -Wconversion"
 alias rot13="tr 'A-Za-z' 'N-ZA-Mn-za-m'"
