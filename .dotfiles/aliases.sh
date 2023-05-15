@@ -1,6 +1,6 @@
 #!/bin/zsh
 # SPDX-License-Identifier: MIT
-# SPDX-FileCopyrightText: (C) 2022 nfitzen <https://github.com/nfitzen>
+# SPDX-FileCopyrightText: (C) 2022-2023 nfitzen <https://github.com/nfitzen>
 
 alias \
     pt4="ping -c4 1.1.1.1" \
