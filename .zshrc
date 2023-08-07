@@ -16,6 +16,7 @@ fi
 source $HOME/.dotfiles/aliases.sh
 
 path+=~/.emacs.d/bin
+path+=~/.npm-packages/bin/
 fpath+=~/.dotfiles/functions
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 autoload -U $fpath[-1]/*(.:t)
