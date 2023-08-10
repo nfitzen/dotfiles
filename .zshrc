@@ -21,11 +21,6 @@ fpath+=~/.dotfiles/functions
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 autoload -U $fpath[-1]/*(.:t)
 
-# if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#     ssh-agent -t 1h > "$XDG_RUNTIME_DIR/ssh-agent.env"
-# fi
-# if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
-#     source "$XDG_RUNTIME_DIR/ssh-agent.env" > /dev/null
-# fi
-
 export EDITOR=/usr/bin/vim
+
+alias kssh-add="SSH_ASKPASS=/usr/bin/ksshaskpass ssh-add < /dev/null"
