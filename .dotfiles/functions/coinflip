@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 # SPDX-License-Identifier: CC0-1.0
-# SPDX-FileCopyrightText: 2022-2023 nfitzen <https://github.com/nfitzen>
+# SPDX-FileCopyrightText: 2022-2024 nfitzen <https://github.com/nfitzen>
 
-function coinflip {
+function coinflip () {
     if [ $(($RANDOM % 2)) -eq 0 ]; then
         echo "heads"
     else

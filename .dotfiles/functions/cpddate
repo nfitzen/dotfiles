@@ -1,9 +1,10 @@
 #!/bin/bash
 # SPDX-License-Identifier: CC0-1.0
-# SPDX-FileCopyrightText: 2021 nfitzen <https://github.com/nfitzen>
+# SPDX-FileCopyrightText: 2021, 2024 nfitzen <https://github.com/nfitzen>
 
-# A Bash function that transforms a date string into Discord's Unix time format, and copies it.
-# Requires xclip. Place in ~/.bash_aliases or any other Bash source.
+# A Bash function that transforms a date string into Discord's Unix time
+# format, and copies it. Requires wl-clipboard if on Wayland and xclip
+# otherwise. Place in ~/.bash_aliases or any other Bash source.
 
 function cpddate () {
     if [ $# -eq 0 ]; then
@@ -19,5 +20,10 @@ function cpddate () {
         string="${string}:$2"
     fi
     string="${string}>"
-    echo -n "$string" | xclip -selection clipboard
+    if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+        clip="wl-copy"
+    else
+        clip="xclip -selection clipboard"
+    fi
+    echo -n "$string" | ${clip}
 }

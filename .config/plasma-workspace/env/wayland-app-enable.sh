@@ -1,7 +1,7 @@
-#!/usr/bin/env sh
+#!/bin/sh
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2023-2024 nfitzen <https://github.com/nfitzen>
 
-if [ -z "$WAYLAND_SESSION" ]; then
-
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
 export MOZ_ENABLE_WAYLAND=1
-
 fi
