@@ -1,0 +1,22 @@
+#!/bin/sh
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: 2024 nfitzen <https://github.com/nfitzen>
+
+# requires imagemagick
+
+# TODO: get imagemagick to use Discord background properly
+tex2png () {
+    background_color="#36393e"
+    [ -n "$2" ] && background_color="$2"
+    bn="${1%.tex}"
+    pdflatex "$1" && \
+    rm "${bn}.aux" "${bn}.log" && \
+    convert \
+        -density 300 \
+        "${bn}.pdf" \
+        -quality 100 \
+        -fill white \
+        -background "$background_color" \
+        -alpha extract \
+        "${bn}.png"
+}
