@@ -8,11 +8,29 @@
 
 function cpddate () {
     if [ $# -eq 0 ]; then
-        >&2 echo "Not enough arguments provided."
+        echo "Not enough arguments provided." >&2
         return 1
     fi
+    if [[ "$1" == "--help" ]]; then
+        cat <<EOF
+cpddate <timestamp> [format]
+
+Copies a Discord-formatted timestamp to the clipboard.
+<timestamp> is any time specifier used by \`date\`.
+
+[format] may be one of:
+
+tT	Short Time
+dD	Short/Long Date
+fF	Short/Long Date/Time
+R	Relative Time
+
+Discord will treat f as the default.
+EOF
+    return 0
+    fi
     if [[ -n "$2" && "$2" != [tTdDfFR] ]]; then
-        >&2 echo "Must use a valid Discord timestamp style."
+        echo "Must use a valid Discord timestamp style." >&2
         return 2
     fi
     string="$(date -d "$1" +'<t:%s')"
