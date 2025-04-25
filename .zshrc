@@ -22,9 +22,9 @@ fi
 
 source $HOME/.dotfiles/aliases.sh
 
-path+=~/.emacs.d/bin # my beloved
-path+=~/.npm-packages/bin/
-path+=(~/.cabal/bin ~/.ghcup/bin) # Haskell
+# path+=~/.emacs.d/bin # my beloved
+# path+=~/.npm-packages/bin/
+# path+=(~/.cabal/bin ~/.ghcup/bin) # Haskell
 fpath+=~/.dotfiles/functions
 # Used to manage these dotfiles:
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
