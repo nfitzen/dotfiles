@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 # SPDX-License-Identifier: MIT
-# SPDX-FileCopyrightText: (C) 2022, 2024 nfitzen <https://github.com/nfitzen>
+# SPDX-FileCopyrightText: (C) 2022, 2024-2025 nfitzen <https://github.com/nfitzen>
 
 # The following is by the Manjaro team, (C) 2017,
 # from https://github.com/Chrysostomus/manjaro-zsh-config:
